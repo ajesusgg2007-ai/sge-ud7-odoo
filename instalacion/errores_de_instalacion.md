@@ -1,0 +1,7 @@
+# Registro de Errores y Soluciones - Instalación Odoo con Docker
+
+| Error o Mensaje | Causa | Solución Aplicada / Comprobaciones | Fuente Consultada |
+| :--- | :--- | :--- | :--- |
+| failed to connect to the docker API at npipe:////./pipe/docker_engine |Docker Desktop no está iniciado.Dockerno se está ejecutando en segundo plano en Windows, por lo que la terminal no encuentra el canal de comunicación | Abrir la aplicación **Docker Desktop** desde el Menú de Inicio y esperar a que el estado cambie antes de ejecutar docker-compose up -d. | Documentación y comportamiento estándar de Docker Desktop en Windows. |
+| Error: not enough disk space to install: need 3376 MiB, only 2529 MiB available | **Espacio en disco C: insuficiente.** El instalador de Docker requiere al menos ~3.38 GB para extraer e instalar los componentes. | Liberar espacio en la unidad C: vaciando la papelera, ejecutando el *Liberador de espacio en disco* o eliminando archivos temporales y descargas. | Captura de pantalla de la instalación de Docker Desktop. |
+| *Problema típico:* WSL 2 installation is incomplete | **Falta la actualización del Kernel de Linux.** Docker Desktop requiere el motor WSL2 de Microsoft actualizado para funcionar en Windows. | Ejecutar en PowerShell el comando wsl --update o descargar el paquete oficial de actualización del kernel de WSL2 desde la web de Microsoft. | Documentación oficial de Docker Desktop en Windows. |
